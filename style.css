@@ -17,9 +17,11 @@ body {
     align-items: center;
     min-height: 100vh;
     padding: 20px;
+    transition: background 0.3s, color 0.3s;
 }
 
 .container {
+    position: relative;
     background: var(--card-bg);
     width: 100%;
     max-width: 450px;
@@ -98,4 +100,72 @@ body {
     margin-top: 40px;
     font-size: 12px;
     color: #bdc3c7;
+}
+
+
+[data-theme="dark"] {
+    --primary: #4da3ff;
+    --accent: #8a8f98;
+    --bg-color: #0f1419;
+    --card-bg: #1c2128;
+    --text-main: #e6edf3;
+    --text-sub: #9da7b3;
+}
+
+
+[data-theme="dark"] .url-btn {
+    background: #242a33;
+    border: 1px solid #2f3742;
+}
+
+[data-theme="dark"] .url-btn:hover {
+    background: var(--primary);
+}
+
+[data-theme="dark"] .email-box {
+    background: #2a1f1f;
+    border: 1px solid #3b2a2a;
+}
+
+[data-theme="dark"] .footer {
+    color: #6e7681;
+}
+
+
+.theme-toggle {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    border: 1px solid #e1e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    transition: all .2s;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.05);
+}
+
+.theme-toggle svg {
+    width: 22px;
+    height: 22px;
+    fill: var(--text-main);
+}
+
+@media (max-width: 575.98px) {
+    .container {
+        padding: 36px 22px 30px;
+    }
+
+    .theme-toggle {
+        top: 18px;
+        right: 18px;
+    }
 }
